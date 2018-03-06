@@ -1,17 +1,16 @@
-1520272104050	geckodriver	INFO	geckodriver 0.19.1
-1520272104061	geckodriver	INFO	Listening on 127.0.0.1:52998
-1520272107126	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "-profile" "C:\\Users\\IRENEH~1\\AppData\\Local\\Temp\\rust_mozprofile.g4wGFfITG0cX"
-*** You are running in headless mode.
-1520272107727	Marionette	INFO	Enabled via --marionette
-1520272109294	Marionette	INFO	Listening on port 53006
-1520272110249	Marionette	WARN	TLS certificate errors will be ignored for this session
-d/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1520339973740	geckodriver	INFO	geckodriver 0.19.1
+1520339973747	geckodriver	INFO	Listening on 127.0.0.1:59773
+1520339976825	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\IRENEH~1\\AppData\\Local\\Temp\\rust_mozprofile.LsDhBXcEYuks"
+1520339977516	Marionette	INFO	Enabled via --marionette
+1520339979146	Marionette	INFO	Listening on port 59782
+1520339979943	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 5480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
-um/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 2512, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+src/chrome/common/ipc_channel_win.cc, line 346
 [Parent 16360, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 
