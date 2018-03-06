@@ -12,7 +12,7 @@ browser_options = Options()
 browser_options.add_argument('--headless')
 browser_options.add_argument('--disable-gpu')
 
-using_firefox = False  # if false user uses chrome
+using_firefox = True  # if false user uses chrome
 using_headless = True # if true, browser won't open up
 
 class NewVisitorTest(unittest.TestCase):
