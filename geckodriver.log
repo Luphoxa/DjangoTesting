@@ -1,11 +1,12 @@
-1520341773489	geckodriver	INFO	geckodriver 0.19.1
-1520341773499	geckodriver	INFO	Listening on 127.0.0.1:60794
-1520341776563	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "-profile" "C:\\Users\\IRENEH~1\\AppData\\Local\\Temp\\rust_mozprofile.CjsyYpKFrjOx"
+1520344194014	geckodriver	INFO	geckodriver 0.19.1
+1520344194022	geckodriver	INFO	Listening on 127.0.0.1:62561
+1520344197091	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "-profile" "C:\\Users\\IRENEH~1\\AppData\\Local\\Temp\\rust_mozprofile.vSIxU1uS1GBi"
 *** You are running in headless mode.
-1520341777126	Marionette	INFO	Enabled via --marionette
-1520341778622	Marionette	INFO	Listening on port 60803
-1520341779678	Marionette	WARN	TLS certificate errors will be ignored for this session
-uild/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1520344197636	Marionette	INFO	Enabled via --marionette
+1520344199082	Marionette	INFO	Listening on port 62571
+1520344199114	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+_win.cc, line 346
 [Child 5480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 

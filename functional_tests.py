@@ -12,7 +12,7 @@ browser_options = Options()
 browser_options.add_argument('--headless')
 browser_options.add_argument('--disable-gpu')
 
-using_firefox = True  # if false user uses chrome
+using_firefox = False  # if false user uses chrome
 using_headless = True # if true, browser won't open up
 
 class NewVisitorTest(unittest.TestCase):
@@ -50,8 +50,7 @@ class NewVisitorTest(unittest.TestCase):
 
         #the user can type in a to-do item right away
         inputbox = self.browser.find_element_by_id('id_new_item')
-        self.assertEqual
-        (
+        self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
         )
@@ -66,7 +65,8 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1. Make a 3D Model Car' for row in rows)
+            any(row.text == '1. Make a 3D Model Car' for row in rows),
+            "New to-do item did not appear in table"
         )
 
         self.fail('Finish the test!') #always fails, remainder to finish the test

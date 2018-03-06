@@ -10,4 +10,4 @@ class HomePageTest(TestCase):
 
     def test_uses_home_template(self):
         response = self.client.get('/') # passing URL we want to test
-        self.assertTemplateUsed(response, 'wrong.html') 
+        self.assertTemplateUsed(response, 'home.html') 
