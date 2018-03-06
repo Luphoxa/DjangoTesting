@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 import unittest
+import time
 
 #Browser path
 geckodriver_path = r"C:\Anaconda2\misc\geckodriver-v0.19.1-win64\geckodriver.exe"
@@ -12,7 +13,7 @@ browser_options.add_argument('--headless')
 browser_options.add_argument('--disable-gpu')
 
 using_firefox = True  # if false user uses chrome
-using_headless = False # if true, browser won't open up
+using_headless = True # if true, browser won't open up
 
 class NewVisitorTest(unittest.TestCase):
 
@@ -43,15 +44,32 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
 
         #when the page loaded the user knows he/she is on the right page because the page title says so
-        self.assertIn("To-Do", self.browser.title, "Browse title was " + self.browser.title)
-        self.fail('Finish the test!') #always fails, remainder to finish the test
+        self.assertIn("To-Do", self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('To-Do', header_text)
 
         #the user can type in a to-do item right away
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertEqual
+        (
+            inputbox.get_attribute('placeholder'),
+            'Enter a to-do item'
+        )
 
         #the user types "make a 3D model car" in a text box
+        inputbox.send_keys('Make a 3D Model Car')
 
         #when hitting enter, the page updates and now lists "1. make a 3D model car"
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)  #gives the page time to load
 
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertTrue(
+            any(row.text == '1. Make a 3D Model Car' for row in rows)
+        )
+
+        self.fail('Finish the test!') #always fails, remainder to finish the test
         #the textbox to add new items is still there
         #the user enters "make car texture"
 
