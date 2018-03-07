@@ -38,6 +38,11 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.close()
 
+    def check_for_row_in_list_table(self, row_text):
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn(row_text, [row.text for row in rows])
+
     # start teststory
     def test_can_start_a_list_and_retrieve_it_later(self):
 
@@ -64,9 +69,7 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)  # gives the page time to load
 
         # the page now lists "1. Make a 3D Model Car"
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: Make a 3D Model Car', [row.text for row in rows])
+        self.check_for_row_in_list_table('1: Make a 3D Model Car')
 
         # the textbox to add new items is still there
         # the user enters "Make car texture"
@@ -76,10 +79,8 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         # the page updates again and now lists both items
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: Make a 3D Model Car', [row.text for row in rows])
-        self.assertIn('2. Make car texture', [row.text for row in rows])
+        self.check_for_row_in_list_table('1: Make a 3D Model Car')
+        self.check_for_row_in_list_table('2. Make car texture')
 
         # the user doesn't want other users to be able to see or edit his/her own list.
         # This is why the site generates a unique url for every user. There is a little explanatory text to that effect
