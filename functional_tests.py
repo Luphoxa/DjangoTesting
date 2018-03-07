@@ -80,7 +80,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # the page updates again and now lists both items
         self.check_for_row_in_list_table('1: Make a 3D Model Car')
-        self.check_for_row_in_list_table('2. Make car texture')
+        self.check_for_row_in_list_table('2: Make car texture')
 
         # the user doesn't want other users to be able to see or edit his/her own list.
         # This is why the site generates a unique url for every user. There is a little explanatory text to that effect
